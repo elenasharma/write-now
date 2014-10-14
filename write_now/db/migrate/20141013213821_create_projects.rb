@@ -6,8 +6,8 @@ class CreateProjects < ActiveRecord::Migration
         t.integer :goal_time_limit, null: false
         t.integer :current_wordcount, null: false, default: 0
         t.boolean :active, null: false, default: true
-        t.boolean :archived, null: false, default: false
-        t.boolean :completed, null: false, default: false
+        t.boolean :archived, default: false
+        t.boolean :completed, default: false
     	t.belongs_to :user
     	t.timestamps
     end
