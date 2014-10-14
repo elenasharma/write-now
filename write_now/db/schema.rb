@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20141013213821) do
     t.integer  "wordcount_goal",                    null: false
     t.integer  "goal_time_limit",                   null: false
     t.integer  "current_wordcount", default: 0,     null: false
-    t.boolean  "active",            default: true
+    t.boolean  "active",            default: true,  null: false
     t.boolean  "archived",          default: false
     t.boolean  "completed",         default: false
     t.integer  "user_id"
@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20141013213821) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "password"
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.string   "password",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
