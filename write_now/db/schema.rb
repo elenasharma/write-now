@@ -13,12 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20141013213821) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "projects", force: true do |t|
+    t.string   "title",                             null: false
+    t.integer  "wordcount_goal",                    null: false
+    t.integer  "goal_time_limit",                   null: false
+    t.integer  "current_wordcount", default: 0,     null: false
+    t.boolean  "active",            default: true
+    t.boolean  "archived",          default: false
+    t.boolean  "completed",         default: false
     t.integer  "user_id"
-    t.integer  "goal_time_limit"
-    t.boolean  "active"
-    t.boolean  "archived"
-    t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
