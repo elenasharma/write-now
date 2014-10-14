@@ -1,13 +1,14 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
+        t.string :title, null: false
+        t.integer :wordcount_goal, null: false
+        t.integer :goal_time_limit, null: false
+        t.integer :current_wordcount, null: false, default: 0
+        t.boolean :active, null: false, default: true
+        t.boolean :archived, null: false, default: false
+        t.boolean :completed, null: false, default: false
     	t.belongs_to :user
-        t.string :title
-        t.integer :wordcount_goal
-    	t.integer :goal_time_limit
-    	t.boolean :active
-    	t.boolean :archived
-    	t.boolean :completed
     	t.timestamps
     end
   end
