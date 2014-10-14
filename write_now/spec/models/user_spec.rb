@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-describe User do
-	let!(:user) {create :user}
-end
+# describe User do
+# 	let!(:user) {create :user}
+# end
